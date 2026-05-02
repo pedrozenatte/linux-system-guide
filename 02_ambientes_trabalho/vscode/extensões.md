@@ -1,0 +1,29 @@
+# Extensões VSCode
+
+- C/C++ Compile Run
+- GitLens
+- Google Colab
+- Git Graph
+- Pacote de Linguagem PT-BR
+- Python Debugger
+- Python
+- Pylance
+- Python Environments
+- Jupyter
+- Jupyter Keymap
+- Jupyter Renderers
+- Jupyter Cell Tags
+- Jupyter Slideshow
+- CMake Tools
+- C/C++ Dev Tools
+- C/C++
+- Live Server
+- Makefile Tools
+- TypeScript Nightly
+- Live Share
+- Material Icon Theme
+- Live Server
+- Markdown Preview Enhanced
+- PDF Viewer
+- CMake
+- CodeLLDB
