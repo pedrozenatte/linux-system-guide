@@ -1,4 +1,4 @@
-# Programas úteis do SO
+# Programas úteis para o SO
 
 - Git 
 - Vscode 
