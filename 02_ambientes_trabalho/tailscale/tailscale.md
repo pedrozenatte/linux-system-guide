@@ -69,3 +69,8 @@ sudo tailscale logout
 ```
 
 ---
+
+**Verificar se alguém pode acessar o meu computador via SSH:**
+```bash
+sudo systemctl status ssh
+```
