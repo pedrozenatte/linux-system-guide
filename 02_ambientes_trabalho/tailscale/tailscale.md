@@ -9,6 +9,12 @@ https://tailscale.com/docs/install/linux
 https://tailscale.com/docs/install/ubuntu/ubuntu-2004
 
 ## Instalação:
+**Modo rápido:**
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
+```
+
+**Modo específico:**
 ```bash
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/focal.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null
 
