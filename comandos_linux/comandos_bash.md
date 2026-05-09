@@ -157,6 +157,8 @@ echo alguma coisa >> file.txt
 ```
 OBS: Se o arquivo não existir, ele vai criar. 
 
+MINUTO 32
+
 ### Permissões
 No Linux, arquivos possuem permissões de leitura, escrita e execução.
 
