@@ -333,5 +333,20 @@ Isso é aceitável para a chave pública, pois ela não é secreta.
 
 ---
 
+---
+
+### Observação para o git
+Após criar uma chave SSH para o git, temos que definir um nome global para fazer push e pull. 
+```bash
+git config --global user.email "algum@email.com"
+git config --global user.name "nome"
+```
+
+Quando for utilizar em um repositório específico de um github, por exemplo, um da empresa, configurar um user local:
+git config user.name "nome"
+git config user.email "email@local.com"
+
+---
+
 ### Referências
 https://www.youtube.com/watch?v=e4Yt-UlsJG4
