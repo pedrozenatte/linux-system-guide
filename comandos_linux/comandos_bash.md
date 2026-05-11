@@ -157,7 +157,51 @@ echo alguma coisa >> file.txt
 ```
 OBS: Se o arquivo não existir, ele vai criar. 
 
-MINUTO 32
+
+### Arquivos de paginação
+Uma foma melhor para ler aquivos no terminal
+```bash
+less arquivo_de_leitura
+```
+
+### Man (manual) Pages 
+Gerar um manual do comando
+```bash
+# Exemplo
+man ls
+```
+
+
+### Variáveis Básicas
+```bash
+echo $HOME
+echo $USER
+echo $PWD
+echo $SHELL
+echo $UID
+```
+
+Além disso, também podemos criar nossas próprias variáveis válidas apenas para a sessão do terminal. 
+```bash
+nome=pedro # Sem espaços
+echo $nome
+```
+**OBS:** Cuidado com aspas duplas e aspas simples, pois a dupla retorna a string original:
+
+```bash
+pedro@pedro-Aspire-A515-54G:~$ nome="pedro      zenatte"
+pedro@pedro-Aspire-A515-54G:~$ echo $nome
+pedro zenatte
+pedro@pedro-Aspire-A515-54G:~$ echo "$nome"
+pedro      zenatte
+```
+
+Para desativar a variável:
+```bash
+unset nome_da_variavel
+```
+
+MINUTO 54
 
 ### Permissões
 No Linux, arquivos possuem permissões de leitura, escrita e execução.
@@ -168,13 +212,13 @@ No Linux, arquivos possuem permissões de leitura, escrita e execução.
 chmod +x script.sh
 ```
 
-### Histórico de comandos
+### Histórico de Comandos
 #### Ver histórico
 ```bash
 history
 ```
 
-### Arquivos ocultos
+### Arquivos Ocultos
 Para criar um arquivo oculto, usamos:
 ```bash
 # Um ponto antes do arquivo
@@ -193,6 +237,39 @@ ls -a
 ```bash
 sudo systemctl start 
 ```
+
+#### Verificar onde algo está localizado no sistema:
+```bash
+which python3
+```
+
+#### Identificar o tipo de comando ou se é um alias:
+```bash
+# Exemplo
+type ls
+```
+
+#### Identificar o tipo de um arquivo:
+Esse comando analisa o conteúdo, dizendo se o arquivo é um texto ASCII, uma imagem, um executável, um diretório, entre outros.
+```bash
+file algum_arquivo/diretório
+```
+
+#### Translate (tr):
+Traduzir, deletar ou cumprir caracteres de entrada padrão
+```bash
+echo $PATH | tr ":" "\n"
+```
+Nesse caso, os dois pontos virarão '\n'. 
+
+---
+
+### PATH
+O \$PATH é uma variável de ambiente no Linux que define os diretórios onde o sistema procura por executáveis. Quando você digita um comando no terminal, o sistema verifica o conteúdo do $PATH na ordem dos diretórios listados para encontrar o programa correspondente e executá-lo, facilitando o uso de comandos sem precisar especificar seu caminho completo.
+
+Sendo assim, podemos criar comandos personalizados.
+
+---
 
 ## Referência
 https://www.youtube.com/watch?v=Sx9zG7wa4FA
