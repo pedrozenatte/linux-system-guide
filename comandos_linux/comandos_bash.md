@@ -32,7 +32,7 @@ ls
 ```
 
 #### 3) Listagem detalhada:
-
+Verifica as permissões
 ```bash
 ls -l
 ```
@@ -201,9 +201,30 @@ Para desativar a variável:
 unset nome_da_variavel
 ```
 
-MINUTO 54
+Nome do usuário e do computador:
+```bash
+pedro@pedro-Aspire-A515-54G:~$ whoami
+pedro
+pedro@pedro-Aspire-A515-54G:~$ uname
+Linux
+pedro@pedro-Aspire-A515-54G:~$ uname -a
+Linux pedro-Aspire-A515-54G 7.0.0-15-generic #15-Ubuntu SMP PREEMPT_DYNAMIC Wed Apr 22 16:06:43 UTC 2026 x86_64 GNU/Linux
+```
 
-### Permissões
+Atribuir um comando a uma variável (guardar a saída de um comando):
+```bash
+pedro@pedro-Aspire-A515-54G:~$ thing=`uname -a`
+pedro@pedro-Aspire-A515-54G:~$ echo "$thing"
+Linux pedro-Aspire-A515-54G 7.0.0-15-generic #15-Ubuntu SMP PREEMPT_DYNAMIC Wed Apr 22 16:06:43 UTC 2026 x86_64 GNU/Linux
+```
+OU
+```bash
+thing=$(uname -a)
+echo "$thing"
+```
+
+
+### Permissões de arquivos
 No Linux, arquivos possuem permissões de leitura, escrita e execução.
 
 #### 1) Altera permissões.
@@ -211,6 +232,25 @@ No Linux, arquivos possuem permissões de leitura, escrita e execução.
 ```bash
 chmod +x script.sh
 ```
+
+---
+
+Ao fazer um script.sh, na primeira linha do script colocar shebang ou hashbang. Isso é uma linha especial usada no início de scripts em sistemas Unix que inidica ao SO qual interpretador usar para rodar o script. 
+
+Exemplo:
+```sh
+#!/usr/bin/env bash
+
+comandos
+...
+...
+```
+
+Dessa forma, estamos dizendo que o script deve ser executado usando o Bash, independentemente de qual versão do Bash ou do sistema esteja sendo usada.
+
+---
+
+MINUTO 1:22:45
 
 ### Histórico de Comandos
 #### Ver histórico
