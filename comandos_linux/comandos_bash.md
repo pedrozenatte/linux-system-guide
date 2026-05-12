@@ -302,6 +302,11 @@ echo $PATH | tr ":" "\n"
 ```
 Nesse caso, os dois pontos virarão '\n'. 
 
+#### Fornecer informações sobre pacotes:
+```bash
+sudo dpkg -l
+```
+
 ---
 
 ### PATH
