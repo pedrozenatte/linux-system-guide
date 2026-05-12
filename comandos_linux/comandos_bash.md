@@ -43,7 +43,16 @@ ls -l
 ls -a
 ```
 
-#### 5) Muda de diretório.
+#### 5) Listar arquivos em ordem de criação:
+```bash
+# Crescente
+ls -ltr
+
+# Decrescente
+ls -lts
+```
+
+#### 6) Muda de diretório.
 
 **Entrar em uma pasta:**
 CD - Change Directory
@@ -61,6 +70,52 @@ cd ..
 cd ~
 ```
 
+### Processos (ps - process status)
+#### 1) Exibir processos em execução no terminal atual: 
+```bash
+ps
+```
+
+#### 2) Exibir todos os processos em execução no sistema:
+```bash
+ps -e
+
+# OU
+
+ps -A
+```
+
+#### 3) Exibir uma saída mais detalhada, incluindo informações como o ID do processo pai (PPID): 
+```bash
+ps -f
+```
+
+#### 4) Exibir todos os processos que pertencem ao usuário especificado:
+```bash
+ps -u pedro
+```
+
+#### 5) Exibir todos os processos do sistema, independente de qual terminal ou usuário os iniciou, mostrando informações detalhadas: 
+```bash
+ps aux
+```
+- a: exibir processo de todos os usuários
+- u: exibir informações do usuário proprietário do processo
+- x: mostra processos sem terminal associado.
+
+#### 6) Exibir informações de um processo específico:
+```bash
+ps -p PID
+```
+
+#### Exibir informações detalhadas sobre os processos em formato de lista longa: 
+```bash
+ps -l
+```
+
+
+
+
 ### Manipulação de arquivos e pastas
 #### 1) Cria diretórios.
 ```bash
@@ -73,7 +128,7 @@ mkdir pasta1 pasta2 pasta3
 ```
 
 #### 3) touch
-Cria arquivos vazios.
+Cria arquivos vazios ou atualizar o horário de criação de um arquivo já existente.
 ```bash
 touch arquivo.extensão
 ```
@@ -122,10 +177,57 @@ rm -r pasta
 
 **ATENÇÃO:** arquivos removidos pelo terminal normalmente não vão para a lixeira.
 
-### Pesquisando em arquivos
+### Mexendo com arquivos
 Ver o conteúdo do arquivo:
 ```bash
 cat file.txt
+```
+
+Ver as primeiras linhas de um arquivo:
+```bash
+head -nNUMERO arquivo
+```
+
+Ver as últimas linhas de um arquivo:
+```bash
+tail -nNUMERO arquivo
+```
+OBS: Se não especificar o número de linhas, será considerado 5. 
+
+Contar linhas, palavras e caracteres/bytes em um arquivo: 
+```bash
+# Faz tudo:
+wc arquivo
+
+# Conta número de linhas
+wc -l arquivo
+
+# Conta o número de bytes
+wc -c arquivo
+
+# Conta o número de caracteres
+wc -m arquivo
+
+# Conta o número de palavras 
+wc -w arquivo
+
+# Mostra o comprimento da linha mais longa
+wc -L arquivo
+```
+
+Ordenar a saída do arquivo:
+```bash
+sort arquivo
+```
+
+Verificar valores uma vez:
+```bash
+uniq arquivo
+```
+
+Comparar dois arquivos:
+```bash
+diff arquivo1 arquivo2
 ```
 
 Busca arquivos e diretórios:
@@ -134,7 +236,6 @@ find . -name "*.py"
 ```
 
 Busca palavras dentro de arquivos:
- 
 ```bash
 grep "main" arquivo.py
 ```
@@ -163,12 +264,22 @@ Uma foma melhor para ler aquivos no terminal
 ```bash
 less arquivo_de_leitura
 ```
+- /alguma coisa: pesquisa a palavra
+- n: next -> próxima ocorrência
+- N: ocorrência anterior
+- enter: desce uma linha
+- espaço: desce uma página
 
 ### Man (manual) Pages 
 Gerar um manual do comando
 ```bash
 # Exemplo
 man ls
+```
+
+### Verificar o que um determinado comando faz
+```bash
+whatis comando
 ```
 
 
@@ -306,6 +417,7 @@ Nesse caso, os dois pontos virarão '\n'.
 ```bash
 sudo dpkg -l
 ```
+
 
 ---
 
