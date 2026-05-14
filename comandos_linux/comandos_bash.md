@@ -376,7 +376,6 @@ Exportar uma variável para que ela seja vista pelos processos filhos do process
 export NOME_VARIAVEL
 ```
 
-
 ### Permissões de arquivos
 No Linux, arquivos possuem permissões de leitura, escrita e execução.
 
@@ -450,6 +449,20 @@ comando1 || comando2
 # Rodar comandos em outros diretórios sem sair do atual
 (cd .. ; ls -l) # Perceba que está entre parênteses
 ```
+
+
+### Utilização de aspas duplas, simples e \
+Tanto as ", ', ou \ servem para "proteger" a palavra ou caractere, de modo que ele não seja interpretado pelo shell. 
+```bash
+ls 'alunos*'
+ls "alunos*"
+ls alunos\*
+```
+Dessa forma, o shell entender `alunos*` como algo a ser pesquisado, e não tudo que começa com aluno.
+
+#### Diferença entre aspas duplas e simples
+As aspas duplas protege tudo, menos os caracteres `$` \` (crase) e a  `/`.
+Já as aspas simples protegem TUDO. 
 
 
 ### Aleatórios
