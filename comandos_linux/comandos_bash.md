@@ -246,17 +246,38 @@ Ignorar maiúsculas/minúsculas:
 grep -i "erro" log.txt
 ```
 
+### Redirecionamento de saída
+![Redirecionamento de imagens](imagens/redirecionamentoSaida.png)
+
+Normalmente, a saída padrão é a tela, mas podemos mudar isso.
+
 Subscrever em um arquivo: 
 ```bash
 echo hello > file.txt
 ```
 OBS: Isso vai subscrever tudo que estiver no arquivo file.txt
 
-Escrever ao final:
+Escrever ao final de um arquivo (concatena no final):
 ```bash
 echo alguma coisa >> file.txt
 ```
-OBS: Se o arquivo não existir, ele vai criar. 
+OBS: Se o arquivo não existir, ele será criado. 
+
+**ATENÇÃO:** O comando de redirecionamento `> ou >>` na verdade possui um '1' omitido: `1> ou 1>>`, pois o '1' faz referência a saída padrão (STDOUT).
+Para a saída de erro, utilizamos `2> ou 2>>`
+
+Criar uma saída de erros
+```bash
+ls -l arquivo_nao_existe.txt 2>> log.out 
+# log.out é um arquivo que será criado
+```
+OBS: Se tivermos usando o `1> ou 1>>`, como estamos usando a saída padrão, se houver erro, a saída de erro será lançada no terminal, por não estarmos redirecionando para nenhum arquivo. Por padrão, usamos log.out ou log_erro.out. 
+
+Buraco negro do terminal
+```bash
+ls -ls alunos.txtxtx 2> /dev/null
+# Redirecionando uma saída de erro para não aparecer em nenhum lugar.
+```
 
 
 ### Arquivos de paginação
@@ -282,8 +303,13 @@ man ls
 whatis comando
 ```
 
+### Variáveis no Shell
+#### Verificar as variáveis existentes:
+```bash
+env | less
+```
 
-### Variáveis Básicas
+#### Variáveis básicas:
 ```bash
 echo $HOME
 echo $USER
@@ -381,6 +407,33 @@ Para listar esses arquivos:
 ls -a
 ```
 
+### Executar comandos em sequeência controlados: 
+```bash
+# Podemos executar em forma de pipeline 
+comando1 | comando2 |comando3... # A saída de um é a entrada do outro
+```
+
+```bash
+# Podemos executar um em seguida do outro
+comando1 ; comando2 ; comando3....
+```
+Nesse caso, seram executados todos os comandos, mesmo se houver erro. 
+
+```bash
+# Executando os comandos um em seguida do outro se houver sucesso no anterior
+comando1 && comando2
+```
+
+```bash
+# O contrário agora
+# Se o primeiro comando for executado com sucesso, não executo o segundo
+comando1 || comando2
+```
+
+```bash
+# Rodar comandos em outros diretórios sem sair do atual
+(cd .. ; ls -l) # Perceba que está entre parênteses
+```
 
 
 ### Aleatórios
