@@ -306,7 +306,11 @@ whatis comando
 ### Variáveis no Shell
 #### Verificar as variáveis existentes:
 ```bash
-env | less
+env | less # Vai mostrar até as variáveis exportadas
+
+ou 
+
+set | less # Mostra apenas o que é local
 ```
 
 #### Variáveis básicas:
@@ -317,7 +321,6 @@ echo $PWD
 echo $SHELL
 echo $UID
 ```
-
 
 Além disso, também podemos criar nossas próprias variáveis válidas apenas para a sessão do terminal. 
 ```bash
@@ -359,6 +362,18 @@ OU
 ```bash
 thing=$(uname -a)
 echo "$thing"
+```
+
+Verificar o PID do shell atual:
+```bash
+echo $$
+```
+
+**ATENÇÃO:** Todas essas variáveis são locais e pertencem ao shell aberto, então outros shells não enxergam as variáveis.
+
+Exportar uma variável para que ela seja vista pelos processos filhos do processo atual:
+```
+export NOME_VARIAVEL
 ```
 
 
