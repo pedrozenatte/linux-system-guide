@@ -318,6 +318,7 @@ echo $SHELL
 echo $UID
 ```
 
+
 Além disso, também podemos criar nossas próprias variáveis válidas apenas para a sessão do terminal. 
 ```bash
 nome=pedro # Sem espaços
