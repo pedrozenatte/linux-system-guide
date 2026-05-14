@@ -59,3 +59,15 @@ deactivate
 
 **OBS:** Para apagar um ambiente virtual é só apagar a pasta **venv**. 
 
+
+## Utitlizando o ambiente virtual e repassando para o git
+Não é comum passar a pasta do ambiente virtual para o git (pasta venv), pois ao mudar de sistema operacional pode dar problema. Nesse caso, o que fazemos é criar o arquivo `.gitignore` e acrescentar o nome da pasta do ambiente virtual `venv/`. 
+Dessa forma, utilziamos um arquivo requirements.txt (não precisa ser esse nome necessariamente, mas por padronização, usa-se esse) para especificar as dependências do projeto. Esse arquivo é criado com:
+```bash
+pip freeze > requirements.txt
+```
+
+Após isso, uma outra máquina pega esse arquivo, cria o seu próprio ambiente virtual, ativa o ambiente e roda o comando:
+```bash
+pip install -r requirements.txt # Ou o nome do arquivo que contém o que deve ser instalado
+```
