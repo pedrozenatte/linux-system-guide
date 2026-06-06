@@ -27,3 +27,5 @@
 - PDF Viewer
 - CMake
 - CodeLLDB
+- GitHub Actions
+- YAML
