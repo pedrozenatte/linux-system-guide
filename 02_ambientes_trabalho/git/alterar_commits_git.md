@@ -72,9 +72,9 @@ OBS: O número 3 é a quantidade de commits que serão mostrados, e isso serve p
 
 Após isso, irá abrir um editor, então terá algo semelhante a: 
 ```edit
-pick h7i8j9k Commit 1 (mais recente)
+pick h7i8j9k Commit 1 (mais antigo)
 pick d4e5f6g Commit 2 
-pick a1b2c3d Commit 3 (mais antigo)
+pick a1b2c3d Commit 3 (mais recente)
 ```
 
 Troque esse `pick` por `edit`. Salve e feche o editor. 
@@ -84,7 +84,7 @@ Troque esse `pick` por `edit`. Salve e feche o editor.
 git rebase --continue
 ```
 
-Pois assim, o Git vai para o próximo commit, mas sem dizer nada, então precisa lembrar da sequência de commits vista com `git rebase -i HEAD~X` e entender que no rebase interativo `git rebase --continue`, a lista será em ordem do **commit mais antigo para o mais novo** (a ordem de alteração é a inversa vista no arquivo de edição).  
+Pois assim, o Git vai para o próximo commit, mas sem dizer nada, então precisa lembrar da sequência de commits vista com `git rebase -i HEAD~X` e entender que no rebase interativo `git rebase --continue`, a lista será em ordem do **commit mais antigo para o mais novo**.
 
 Para cancelar o rebase:
 ```bash
