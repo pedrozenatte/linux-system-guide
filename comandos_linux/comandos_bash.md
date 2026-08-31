@@ -177,6 +177,21 @@ rm -r pasta
 
 **ATENÇÃO:** arquivos removidos pelo terminal normalmente não vão para a lixeira.
 
+### Verificar tamanho de arquivos e pastas
+#### 1) Espaço disponível no disco
+```bash
+df -h
+```
+OU
+```bash
+du -sh # Mostra o tamanho de cada pasta dentro do diretório em que você está no momento.
+```
+
+#### 2) Espaço ocupado por uma pasta específica
+```bash
+du -sh nome_pasta
+```
+
 ### Mexendo com arquivos
 Ver o conteúdo do arquivo:
 ```bash
