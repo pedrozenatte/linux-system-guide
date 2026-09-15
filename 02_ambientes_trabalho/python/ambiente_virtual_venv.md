@@ -38,7 +38,7 @@ pyenv local 3.11.4
 
 2) Criar o ambiente
 ```bash
-python3 -m venv venv
+python3 -m venv .venv
 ```
 Esse comando vai usar o Python atual, executar o módulo `venv`, o qual também vai criar um ambiente virtual na pasta chamada `venv`.
 
